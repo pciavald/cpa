@@ -1,0 +1,143 @@
+<template name="donnees">
+
+	<div class="panel panel-default"
+		style="padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;">
+		<h4>Diplômes</h4>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Qualification</th>
+					<th>Département</th>
+					<th>Établissement</th>
+					<th>Certifié</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Baccalauréat STSS </td>
+					<td>38</td>
+					<td>Lycée Louise Michel</td>
+					<td><span class="glyphicon glyphicon-ok"></span></td>
+				</tr>
+				<tr>
+					<td>BAFA</td>
+					<td>38</td>
+					<td>FNSF</td>
+					<td><span class="glyphicon glyphicon-ok"></span></td>
+				</tr>
+				<tr>
+					<td>MOOC Développeur Web Niv.1</td>
+					<td>N/A</td>
+					<td>Coursera</td>
+					<td>En attente</td>
+				</tr>
+				<tr>
+					<td>Permis B</td>
+					<td>38</td>
+					<td>Préfecture de l'Isère</td>
+					<td><span class="glyphicon glyphicon-ok"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="panel panel-default"
+		style="margin-top: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;">
+		<h4>Activités périprofessionnelles</h4>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Désignation</th>
+					<th>Département</th>
+					<th>Structure</th>
+					<th>Durée</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Président du club de football</td>
+					<td>38</td>
+					<td>FC La Capuche</td>
+					<td>1 an</td>
+				</tr>
+				<tr>
+					<td>Langage des signes</td>
+					<td></td>
+					<td>N/A</td>
+					<td>N/A</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="panel panel-default"
+		style="margin-top: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;">
+		<h4>Formations non qualifiantes</h4>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Filière</th>
+					<th>Département</th>
+					<th>Établissement</th>
+					<th>Durée</th>
+					<th>Parcours achevé</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>PACES</td>
+					<td>38</td>
+					<td>Université Joseph Fourrier</td>
+					<td>1 an</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Licence en psychologie</td>
+					<td>38</td>
+					<td>Université Pierre Mendès France</td>
+					<td>2 an</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="panel panel-default"
+		style="margin-top: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;">
+		<h4>Historique Pôle Emploi</h4>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Qualification</th>
+					<th>Département</th>
+					<th>Emploi</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each session "pe"}}
+				{{> emploi}}
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+
+</template>
+
+<template name="emploi">
+	<tr>
+		<td>{{qlf}}</td>
+		<td>{{departement}}</td>
+		<td>{{rome}}</td>
+	</tr>
+</template>

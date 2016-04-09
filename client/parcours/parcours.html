@@ -1,0 +1,51 @@
+<template name="parcours">
+	<div class="row">
+
+		{{home "donnees"}}
+		<div class="col-md-3">
+			<div class="row">
+				<div class="list-group">
+					<a href=# class="donnees list-group-item {{#if $eq parcours_tab 'donnees'}}active{{/if}}">
+						Mes données
+					</a>
+					<a href=# class="ajouter list-group-item {{#if $eq parcours_tab 'ajouter'}}active{{/if}}">
+						<span class="glyphicon glyphicon-plus"></span> CV publique
+					</a>
+					<a href=# class="cv1 list-group-item {{#if $eq parcours_tab 'cv1'}}active{{/if}}">
+						<span class="glyphicon glyphicon-chevron-right"></span> Animateur <span class="badge">4</span>
+					</a>
+					<a href=# class="cv2 list-group-item {{#if $eq parcours_tab 'cv2'}}active{{/if}}">
+						<span class="glyphicon glyphicon-chevron-right"></span> Service Civique <span class="badge">1</span>
+					</a>
+				</div>
+			</div>
+			{{#if $eq parcours_tab "donnees"}}
+			<div class="row">
+				<div class=" panel panel-default">
+					<div class="panel-heading"><h3 class="panel-title">Ajout d'Expériences</h3></div>
+					<div class="panel-body">
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>voyages</strong></button><br />
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>langues</strong></button><br />
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>MOOC</strong></button><br />
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>formation</strong></button><br />
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>emploi</strong></button><br />
+						<button class="btn btn-info" style="margin-bottom:10px; width: 100%;"><strong>association</strong></button><br />
+					</div>
+				</div>
+			</div>
+			{{/if}}
+		</div>
+		<div class="col-xs-12 col-md-9 col-ls-9">
+			{{#if $eq parcours_tab "donnees"}}
+			{{> donnees}}
+			{{/if}}
+			{{#if $eq parcours_tab "cv1"}}
+			{{> cv1}}
+			{{/if}}
+			{{#if $eq parcours_tab "cv2"}}
+			{{> cv2}}
+			{{/if}}
+		</div>
+
+	</div>
+</template>

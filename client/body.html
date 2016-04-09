@@ -1,0 +1,114 @@
+<body>
+
+<style>
+	body {
+		background-color: #E2E2E2;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+	
+	.container {
+		border-radius:0;
+		margin-left: 10%;
+		width:80%;
+    	background-color: white;
+		border-left:0.5px solid #EDEDED;
+		border-right: 0.5px solid #EDEDED;
+		box-shadow: 0px 0px 50px #C6C6C6;
+		padding-left:0px;
+  		padding-right:0px;
+	}
+
+	.container-fill {
+		padding:20px;
+	}
+	.navbar-default {
+		border-radius:0;
+		margin:0;
+		width:100%;
+	}
+	.affix {
+    	top: 0;
+    	width:80%;
+  	}
+
+	#login-dropdown-list {
+		left:-120px;
+		position:absolute;
+		top:40px;
+		box-shadow: 0px 0px 30px #C6C6C6;
+		}
+
+
+	.custom-margin{
+		padding-left: 0;
+		padding-right: 0;
+		}
+
+	.modal-content {
+		margin-top: 20px;
+		}
+
+	.img-circle {
+		width:68px;
+		height:68px;
+		}
+
+	.header img {
+		float: left;
+	}
+	.header {
+		position: relative;
+	}
+	.header h3 {
+		float: left;
+		margin-top: 20px;
+		margin-bottom: auto;
+		margin-left: 10px;
+	}
+</style>
+
+{{home "parcours"}}
+
+<div class="panel panel-default container fill">
+
+	<div class="container-fluid header" style="padding:20px;">
+		<img src="logo.png" style="width: 50px" />
+		<h3>CPA - CV augmenté</h3>
+	</div>
+	
+	<nav class="navbar navbar-default">
+		<ul class="nav navbar-nav col-sm-12">
+			<li role=presentation
+			class="parcours-tab {{#if $eq  tab 'parcours'}}active{{/if}}">
+				<a href=#>Parcours</a>
+			</li>
+			<li role=presentation
+			class="projet-tab {{#if $eq tab 'projet'}}active{{/if}}">
+				<a href=#>Projet Professionnel</a>
+			</li>
+			<li role=presentation
+			class="prop-tab {{#if $eq tab 'prop'}}active{{/if}}">
+				<a href=#>Propositions</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<div class="container-fill">
+		<div class="row" style="margin-top:20px; padding:2%;">
+			{{#if $eq tab "projet"}}
+				{{> projet}}
+			{{/if}}
+			{{#if $eq tab "parcours"}}
+				{{> parcours}}
+			{{/if}}
+			{{#if $eq tab "prop"}}
+				{{> prop}}
+			{{/if}}
+		</div>
+	</div>
+</div>
+
+</body>
